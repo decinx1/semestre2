@@ -9,7 +9,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+
+    <script>
+        function eliminar(){
+            var respuesta=confirm("estas seguro que quieres elimnar ");
+            return respuesta
+        }
+
+
+    </script>
     <h1 class="text-center p-3">hola mundo</h1>
+        <?php
+         include "modelo/conexion.php";
+        include "controlador/eliminar.php";
+        ?>
      <!-- contenido del forms de boostrap -->
     <div class="container-fluid row ">
         <form class="col-4 p-3" method="POST">
@@ -17,6 +30,7 @@
             <?php
             include "modelo/conexion.php";
             include "controlador/registro_persona.php";
+
              ?>
 
             <div class="mb-3">
@@ -70,11 +84,11 @@
                 <td><?=$datos->nombre ?></td>
                 <td><?=$datos->apellido ?></td>
                 <td><?=$datos->dni ?></td>
-                <td><?=$datos->fecha_nac ?></td>
+                <td><?=$datos->fecha ?></td>
                 <td><?=$datos->correo ?></td>
                 <td>
-                    <a href="modificar.php?<?=$datos->id_persona ?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <a onclick="return eliminar()" href="index.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    <a href="modificar.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <a onclick="return eliminar()" href="index.php ?id=<?= $datos->id_persona ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                 </td>
                 </tr>
                 <?php }

@@ -9,7 +9,7 @@ if (!empty($_POST["btnregistrar"])){
         $fecha=$_POST["fecha"];
         $correo=$_POST["correo"];
 
-        $sql=$conexion->query("insert into persona(nombre,apellido,dni,fecha_nac,correo)values('$nombre','$apellido',$din,'$fecha','$correo')");
+        $sql=$conexion->query("insert into persona(nombre,apellido,dni,fecha,correo)values('$nombre','$apellido',$din,'$fecha','$correo')");
         if ($sql==1) {
             echo '<div class="alert alert-success">Persona registrado correctamente </div>';
         } else {
