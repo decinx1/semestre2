@@ -10,14 +10,14 @@
 </head>
 <body>
     <h1 class="text-center p-3">hola mundo</h1>
+     <!-- contenido del forms de boostrap -->
     <div class="container-fluid row ">
-        <form class="col-4 p-3">
+        <form class="col-4 p-3" method="POST">
             <h3 class="text-center">Registro de peronas </h3>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nombre de la persona </label>
-                <input type="text" class="form-control" name="nombre">
-            </div>
-            <!-- contenido del forms de boostrap -->
+            <?php
+            include "modelo/conexion.php";
+            include "controlador/registro_persona.php";
+             ?>
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre de la persona </label>
@@ -36,7 +36,7 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="fehca">
+                <input type="date" class="form-control" name="fecha">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
@@ -55,24 +55,30 @@
                 <th scope="col">APELLIDOS</th>
                 <th scope="col">DNI</th>
                 <th scope="col">FECHA DE NACIMIENTO</th>
-                <th scope="col">CORREO  </th>
+                <th scope="col">CORREO</th>
                 <ths cope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <?php
+                include "modelo/conexion.php";
+                $sql=$conexion->query("SELECT * FROM persona");
+                while($datos=$sql->fetch_object()){ ?>
+
+                    <tr>
+                <td><?=$datos->id_persona ?></td>
+                <td><?=$datos->nombre ?></td>
+                <td><?=$datos->apellido ?></td>
+                <td><?=$datos->dni ?></td>
+                <td><?=$datos->fecha_nac ?></td>
+                <td><?=$datos->correo ?></td>
                 <td>
-                    <a href="" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                    <a href="modificar.php?<?=$datos->id_persona ?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <a onclick="return eliminar()" href="index.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                 </td>
                 </tr>
-                
+                <?php }
+                ?> 
             </tbody>
             </table>
          </div>

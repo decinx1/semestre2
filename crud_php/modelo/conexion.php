@@ -1,5 +1,5 @@
-<php
-$con exion=new mysqli("localhost",root","","crud_php","8080");
-
+<?php
+$conexion=new mysqli("localhost","root","","clubphp");
+$conexion->set_charset("utf8");
 
 ?>
