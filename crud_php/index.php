@@ -18,7 +18,7 @@
 
 
     </script>
-    <h1 class="text-center p-3">hola mundo</h1>
+    <h1 class="text-center p-3">Crud PHP</h1>
         <?php
          include "modelo/conexion.php";
         include "controlador/eliminar.php";
