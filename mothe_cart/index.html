@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz día de las madres</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container:contenedor -->
+    <!--evenlope-wrapper: div that contains everything-->
+    <!---->
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Para la mujer que más he amado</strong>
+                        <p>Tu amor incondicional y sacrificio son la base de todo lo que soy. Cada sacrificio, cada gesto de amor, no ha pasado desapercibido. Tu presencia en mi vida es un regalo invaluable que atesoro con todo mi corazón, te quiero mamá.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+</html>
