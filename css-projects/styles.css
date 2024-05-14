@@ -1,0 +1,102 @@
+/* Planet and Stars Styles */
+
+/* Overall Style*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Planet Style*/
+.planet {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow:
+        /*Inner Shadow*/
+        inset 0 0 14px 0 white,
+        inset -40px -30px 60px purple,
+        inset -40px -30px 70px 0 blue,
+        inset -40px -30px 100px 0 cyan,
+        inset -40px -30px 140px 0 powderblue,
+        /* Around Shadows */
+        0 0 20px 0 white,
+        10px 10px 20px 10px purple,
+        -10px -10px 20px 0 cyan;
+}
+/* Star style */
+.star{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.748);
+    border-radius: 50%;
+}
+/*Spesific Star Style */
+.one{
+    top: 50%;
+    left: -100px;
+    transform-origin: calc(200px + 50%);
+    box-shadow: 
+        0 0 50px 10px white,
+        0 0 50px 15px yellow;
+    animation: orbit 10s linear infinite;
+}
+.two{
+    top: -60%;
+    left: 400px;
+    box-shadow: 
+        0 0 50px 10px white,
+        0 0 50px 15px cyan;
+}
+.three{
+    top: 100%;
+    left: -300px;
+    box-shadow: 
+        0 0 50px 10px rgb(198, 11, 219),
+        0 0 50px 15px rgb(255, 12, 178);
+}
+.four {
+    top: 50%;
+    left: -200px;
+    transform-origin: calc(300px + 50%);
+    box-shadow: 
+        0 0 50px 10px white,
+        0 0 50px 15px red;
+    animation: orbit 5s linear infinite;
+}
+.five{
+    top: 150%;
+    left: 450px;
+    box-shadow: 
+        0 0 50px 10px rgb(235, 20, 192),
+        0 0 50px 15px rgb(225, 75, 95);
+}
+.six{
+    top: -70%;
+    left: -200px;
+    box-shadow: 
+        0 0 50px 10px blue,
+        0 0 50px 10px rgb(14, 14, 215);
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
