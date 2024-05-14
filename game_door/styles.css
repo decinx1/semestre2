@@ -1,0 +1,84 @@
+/*General Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    perspective: 1000px;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    height: 300px;
+    width: 250px;
+    position: relative;
+    border: 5px solid #614120;
+
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.door{
+    background-color: #61412D;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transform-origin: left;
+}
+
+#left-door{
+      top: 0;
+      left: 0;
+      border-right: 1px solid black;
+      transition: transform 0.5s;
+}
+
+#right-door{
+    top: 0;
+    right: 0;
+    border-left: 1px solid black;
+    transition: trasform 0.5s;
+    transform-origin: right;
+}
+
+.shape{
+    border: 4px solid black;
+    width: 100px;
+    height: 130px;
+}
+
+.knob{
+    background-color: #D7DADE;
+    width: 10PX;
+    height: 50px;
+    position: absolute;
+}
+
+#left-knob{
+    top: 50%;
+    left: 10px;
+}
+
+/* Door Swing Effect */
+.wrapper:hover #left-door{
+    transform: rotateY(-140deg);
+}
+
+.wrapper:hover #right-door{
+    transform: rotateY(140deg);
+}
